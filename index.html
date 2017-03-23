@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>data-binding</title>
+</head>
+<body>
+
+<div id="mvvm-app">
+  <input type="text" v-model="someStr">
+  <input type="text" v-model="child.someStr">
+  <p v-class="className" class="abc">
+    {{someStr}}
+    <span v-text="child.someStr"></span>
+  </p>
+</div>
+
+<script src="./js/observer.js"></script>
+<script src="./js/watcher.js"></script>
+<script src="./js/compile.js"></script>
+<script src="./js/mvvm.js"></script>
+<script>
+  var vm = new MVVM({
+    el: '#mvvm-app',
+    data: {
+      someStr: 'hello ',
+      child: {
+        someStr: 'World !'
+      }
+    }
+  });
+
+  vm.$watch('child.someStr', function() {
+    console.log(arguments);
+  });
+</script>
+</body>
+</html>
