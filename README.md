@@ -3,4 +3,4 @@
 
 参考文章：[剖析Vue原理&实现双向绑定MVVM](https://segmentfault.com/a/1190000006599500)
 
-demo：[demo](http://daryldong.com/databinding/)
+demo：[demo](http://demo.daryldong.com/databinding/)
